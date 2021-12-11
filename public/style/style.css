@@ -1,0 +1,95 @@
+body{
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+@font-face {
+    font-family: Pixle;
+    src: url(../font/ARCADECLASSIC.TTF);
+    font-weight: normal;
+}
+.game{
+    position: relative;
+    background-image: url(/public/image/background.svg);
+    /* background-position: 0px; */
+    background-repeat: no-repeat;
+    transition: all 50ms linear;
+    width: 900px;
+    height: 520px;
+    
+}
+#mario{
+    position: relative;
+    top: 385px;
+    background-image: url(/public/image/player.svg);
+    width: 30px;
+    height: 40px;
+    transition: all .01s linear;
+
+}
+.mute{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-image: url(../image/mute\ logo.svg);
+    background-size: cover;
+    cursor: pointer;
+}
+.mario-left{
+    transform: scaleX(-1);
+}
+.mario-play{
+    animation: jump .5s ease-out;
+}
+.win-modal{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    font-size: 50px;
+    font-family: pixle;
+    letter-spacing: 15px;
+    transition: all 500ms ease-out;
+}
+.show-win-modal{
+    visibility: visible;
+    opacity: 1;
+}
+.jump-block{
+    animation: jump-block .5s ease-out;
+}
+@keyframes jump-block{
+    0%{
+        top: 390px;
+    }
+    25%{
+        top: 330px;
+    }
+    50%{
+        top: 330px;
+    }
+    75%{
+        top: 350px;
+    }
+    100%{
+        top: 385px;
+    }
+}
+@keyframes jump{
+    0%{
+        top: 390px;
+    }
+    25%{
+        top: 320px;
+    }
+    50%{
+        top: 280px;
+    }
+    75%{
+        top: 320px;
+    }
+    100%{
+        top: 385px;
+    }
+}
