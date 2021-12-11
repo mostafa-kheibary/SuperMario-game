@@ -10,7 +10,7 @@ body{
 }
 .game{
     position: relative;
-    background-image: url(/public/image/background.svg);
+    background-image: url(../image/background.svg);
     /* background-position: 0px; */
     background-repeat: no-repeat;
     transition: all 50ms linear;
@@ -21,7 +21,7 @@ body{
 #mario{
     position: relative;
     top: 385px;
-    background-image: url(/public/image/player.svg);
+    background-image: url(../public/image/player.svg);
     width: 30px;
     height: 40px;
     transition: all .01s linear;
