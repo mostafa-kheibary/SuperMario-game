@@ -32,7 +32,9 @@ body{
     background-size: cover;
     width: 30px;
     height: 40px;
-    transition: all .01s linear;
+    transition:all 0.7s linear, transform 0s;
+    -webkit-transition:all 0.7s linear, transform 0s;
+    -moz-transition:all 0.7s linear, transform 0s;
 }
 .mute{
     width: 40px;
@@ -51,7 +53,7 @@ body{
     transform: scaleX(-1);
 }
 .mario-play{
-    animation: jump .5s ease-out;
+    animation: jump .5s linear;
 }
 .win-modal{
     visibility: hidden;
@@ -88,16 +90,22 @@ body{
 }
 @keyframes jump{
     0%{
-        top: 390px;
+        top: 385px;
+    }
+    15%{
+        top: 350px;
     }
     25%{
-        top: 320px;
+        top: 300px;
     }
     50%{
-        top: 280px;
+        top:  280px;
     }
     75%{
-        top: 320px;
+        top: 300px;
+    }
+    85%{
+        top: 350px;
     }
     100%{
         top: 385px;
