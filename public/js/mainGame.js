@@ -30,7 +30,11 @@ function Music() {
 }
 // for jump player
 function jump() {
-    if (mario.className !== "mario-play") {
+    console.log(mario.className);
+    if (mario.className.includes("mario-play")) {
+        
+    }
+    else{
         mario.classList.add("mario-play");
         jumpSound.play();
         setTimeout(() => {
@@ -94,10 +98,11 @@ function win() {
 // events start
 document.addEventListener("keydown", function (e) {
     if (e.code === "Space") {
+        jump();
         JumpBlock(250, 270, bumpSound);
         JumpBlock(270, 290, bumpSound);
         JumpBlock(290, 310, bumpSound);
-        jump();
+        
     }
     if (e.which == 68) {
         if (mario.offsetLeft < 770) {
