@@ -1,4 +1,10 @@
+html{
+    height: 100%;
+}
 body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     place-items: center;
@@ -13,6 +19,7 @@ body{
     background-image: url(../image/background.svg);
     /* background-position: 0px; */
     background-repeat: no-repeat;
+    border-radius: 15px;
     transition: all 50ms linear;
     width: 900px;
     height: 520px;
@@ -22,10 +29,10 @@ body{
     position: relative;
     top: 385px;
     background-image: url(../image/player.svg);
+    background-size: cover;
     width: 30px;
     height: 40px;
     transition: all .01s linear;
-
 }
 .mute{
     width: 40px;
@@ -36,6 +43,9 @@ body{
     background-image: url(../image/mute\ logo.svg);
     background-size: cover;
     cursor: pointer;
+}
+.unmute{
+    background-image: url(../image/unmute.svg);
 }
 .mario-left{
     transform: scaleX(-1);

@@ -1,9 +1,9 @@
+// our constant
 const back = document.querySelector(".game");
 const mario = document.querySelector("#mario");
 const mute = document.querySelector(".mute");
+const unmute = document.querySelector('.unmute');
 const WinModal = document.querySelector(".win-modal");
-let Moveto = 0;
-let position = 0;
 const Move = 5;
 const MoveBackground = 15;
 // sound 
@@ -11,18 +11,24 @@ const jumpSound = document.getElementById("jump");
 const ThemeMusic = document.getElementById("ThemeMusic");
 const winSound = document.getElementById('win');
 const bumpSound = document.getElementById('bump');
+// our let
+let Moveto = 0;
+let position = 0;
+
+
+
+// our function
 // for mute and unmute sound
-mute.addEventListener("click", function () {
+function Music() {
     if (ThemeMusic.paused === true) {
         ThemeMusic.play();
     }
     else {
         ThemeMusic.pause();
     }
-});
-
-
-
+    mute.classList.toggle('unmute');
+}
+// for jump player
 function jump() {
     if (mario.className !== "mario-play") {
         mario.classList.add("mario-play");
@@ -32,7 +38,9 @@ function jump() {
         }, 500)
     }
 }
+// for jump player when somthing is on his head
 function JumpBlock(first, secound, sound) {
+    // check if somthing is on the player head or not to change animation
     if (mario.offsetLeft > first && mario.offsetLeft < secound) {
         if (mario.className !== "jump-block") {
             mario.classList.add('jump-block');
@@ -48,25 +56,30 @@ function JumpBlock(first, secound, sound) {
     }
 
 }
+// when click D to move right
 function MoveRight() {
     Moveto -= Move;
     mario.style.background = 'url(public/image/walk.gif)';
     mario.style.right = `${Moveto}px`;
     mario.classList.remove("mario-left");
 }
+// when click A to move left
 function MoveLeft() {
     Moveto += Move;
     mario.style.right = `${Moveto}px`;
     mario.classList.add("mario-left");
 }
+//for screen moving 
 function screenMoveRight() {
     position -= MoveBackground;
     back.style = `background-position: ${position}px ;`
 }
+//for screen moving 
 function screenMoveLeft() {
     position -= - MoveBackground;
     back.style = `background-position: ${position}px ;`
 }
+// when player win
 function win() {
     ThemeMusic.pause();
     winSound.play();
@@ -75,6 +88,10 @@ function win() {
         window.location.reload();
     }, 5000);
 }
+
+
+
+// events start
 document.addEventListener("keydown", function (e) {
     if (e.code === "Space") {
         JumpBlock(250, 270, bumpSound);
@@ -103,3 +120,6 @@ document.addEventListener("keydown", function (e) {
 document.addEventListener("keyup", function () {
     mario.style.background = 'url(public/image/player.svg)';
 })
+mute.addEventListener("click", function () {
+    Music();
+});
