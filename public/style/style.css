@@ -21,7 +21,7 @@ body{
 #mario{
     position: relative;
     top: 385px;
-    background-image: url(../public/image/player.svg);
+    background-image: url(../image/player.svg);
     width: 30px;
     height: 40px;
     transition: all .01s linear;
